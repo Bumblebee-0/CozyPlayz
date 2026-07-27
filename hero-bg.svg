@@ -1,0 +1,138 @@
+<svg viewBox="0 0 900 560" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax slice">
+  <defs>
+    <style>
+      .stroke { stroke: #2b2140; stroke-width: 3; stroke-linejoin: round; }
+
+      .sun-glow { animation: sunPulse 3s ease-in-out infinite; transform-origin: 800px 70px; }
+      @keyframes sunPulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.12); }
+      }
+
+      .cloud { animation: cloudDrift 10s ease-in-out infinite; }
+      .cloud-2 { animation-delay: 1.5s; animation-duration: 8s; }
+      @keyframes cloudDrift {
+        0%, 100% { transform: translateX(0); }
+        50% { transform: translateX(18px); }
+      }
+
+      .pickaxe-arm {
+        transform-origin: 542px 380px;
+        animation: swing 1.6s ease-in-out infinite;
+      }
+      @keyframes swing {
+        0%, 100% { transform: rotate(-28deg); }
+        50% { transform: rotate(-58deg); }
+      }
+
+      .particle { animation: pop 1.6s ease-in-out infinite; }
+      .particle:nth-child(2) { animation-delay: 0.3s; }
+      .particle:nth-child(3) { animation-delay: 0.6s; }
+      @keyframes pop {
+        0%, 100% { opacity: 0; transform: translateY(0) scale(0.6); }
+        50% { opacity: 1; transform: translateY(-14px) scale(1); }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .sun-glow, .cloud, .cloud-2, .pickaxe-arm, .particle { animation: none; }
+      }
+    </style>
+  </defs>
+
+  <!-- sun -->
+  <g class="sun-glow">
+    <rect class="stroke" x="770" y="40" width="60" height="60" fill="#ffd23f"/>
+    <rect x="770" y="20" width="12" height="16" fill="#ffd23f"/>
+    <rect x="818" y="20" width="12" height="16" fill="#ffd23f"/>
+    <rect x="750" y="60" width="16" height="12" fill="#ffd23f"/>
+    <rect x="834" y="60" width="16" height="12" fill="#ffd23f"/>
+  </g>
+
+  <!-- clouds -->
+  <g class="cloud" opacity="0.9">
+    <rect class="stroke" x="90" y="70" width="90" height="30" fill="#ffffff"/>
+    <rect class="stroke" x="120" y="50" width="50" height="24" fill="#ffffff"/>
+  </g>
+  <g class="cloud cloud-2" opacity="0.85">
+    <rect class="stroke" x="500" y="40" width="70" height="26" fill="#ffffff"/>
+    <rect class="stroke" x="522" y="22" width="40" height="20" fill="#ffffff"/>
+  </g>
+
+  <!-- distant hill -->
+  <rect x="0" y="360" width="900" height="200" fill="#8fd67c"/>
+
+  <!-- tree, left -->
+  <g>
+    <rect class="stroke" x="70" y="330" width="34" height="90" fill="#8a5a34"/>
+    <rect class="stroke" x="30" y="230" width="120" height="110" fill="#58c450"/>
+    <rect x="45" y="245" width="18" height="18" fill="#3f9c39"/>
+    <rect x="95" y="260" width="18" height="18" fill="#3f9c39"/>
+    <rect x="70" y="290" width="18" height="18" fill="#3f9c39"/>
+  </g>
+
+  <!-- ground blocks -->
+  <g>
+    <rect class="stroke" x="0" y="420" width="900" height="60" fill="#6fbf52"/>
+    <rect class="stroke" x="0" y="480" width="900" height="80" fill="#8a5a34"/>
+    <rect x="60" y="490" width="20" height="14" fill="#6d4526"/>
+    <rect x="200" y="505" width="24" height="16" fill="#6d4526"/>
+    <rect x="360" y="495" width="18" height="14" fill="#6d4526"/>
+    <rect x="620" y="500" width="22" height="16" fill="#6d4526"/>
+    <rect x="780" y="492" width="20" height="14" fill="#6d4526"/>
+  </g>
+
+  <!-- floating stone block being mined -->
+  <g>
+    <rect class="stroke" x="560" y="330" width="70" height="70" fill="#b7b7c2"/>
+    <rect x="572" y="342" width="16" height="16" fill="#9a9aa6"/>
+    <rect x="600" y="360" width="18" height="18" fill="#9a9aa6"/>
+    <rect x="580" y="375" width="14" height="14" fill="#9a9aa6"/>
+    <!-- crack marks -->
+    <path d="M572 335 L590 355 L578 375 L605 395" stroke="#5a5a63" stroke-width="3" fill="none"/>
+  </g>
+
+  <!-- impact particles -->
+  <g fill="#ffd23f" class="stroke">
+    <rect class="particle" x="640" y="335" width="10" height="10"/>
+    <rect class="particle" x="655" y="360" width="8" height="8"/>
+    <rect class="particle" x="635" y="380" width="9" height="9"/>
+  </g>
+
+  <!-- miner character -->
+  <g>
+    <!-- legs -->
+    <rect class="stroke" x="470" y="470" width="28" height="50" fill="#3a3a5e"/>
+    <rect class="stroke" x="504" y="470" width="28" height="50" fill="#3a3a5e"/>
+    <!-- boots -->
+    <rect class="stroke" x="466" y="512" width="34" height="16" fill="#2b2140"/>
+    <rect class="stroke" x="500" y="512" width="34" height="16" fill="#2b2140"/>
+    <!-- body -->
+    <rect class="stroke" x="462" y="400" width="76" height="76" fill="#ff6f91"/>
+    <rect x="462" y="400" width="76" height="16" fill="#e85a7c"/>
+    <!-- arm raised holding pickaxe -->
+    <g class="pickaxe-arm">
+      <rect class="stroke" x="530" y="345" width="24" height="70" fill="#ffd9a0" transform="rotate(-28 542 380)"/>
+      <!-- pickaxe handle -->
+      <rect x="552" y="300" width="10" height="70" fill="#8a5a34" stroke="#2b2140" stroke-width="2" transform="rotate(-28 557 335)"/>
+      <!-- pickaxe head -->
+      <rect x="530" y="290" width="46" height="14" fill="#b7b7c2" stroke="#2b2140" stroke-width="2" transform="rotate(-28 553 297)"/>
+    </g>
+    <!-- other arm -->
+    <rect class="stroke" x="440" y="410" width="22" height="60" fill="#ffd9a0"/>
+    <!-- head -->
+    <rect class="stroke" x="470" y="345" width="60" height="55" fill="#ffd9a0"/>
+    <!-- hair/cap -->
+    <rect class="stroke" x="466" y="332" width="68" height="20" fill="#9b5de5"/>
+    <!-- face -->
+    <rect x="484" y="368" width="10" height="10" fill="#2b2140"/>
+    <rect x="510" y="368" width="10" height="10" fill="#2b2140"/>
+    <rect x="490" y="386" width="24" height="6" fill="#2b2140"/>
+  </g>
+
+  <!-- small crate/chest nearby -->
+  <g>
+    <rect class="stroke" x="360" y="470" width="50" height="40" fill="#a9723f"/>
+    <rect x="360" y="486" width="50" height="6" fill="#6d4526"/>
+    <rect x="380" y="486" width="10" height="10" fill="#ffd23f" stroke="#2b2140" stroke-width="2"/>
+  </g>
+</svg>
